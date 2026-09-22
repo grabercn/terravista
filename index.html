@@ -6,88 +6,105 @@
   <title>Terra Vista — Custom Pergolas &amp; Outdoor Living</title>
   <meta name="description" content="Terra Vista designs and builds custom pergolas, patio covers, and outdoor living spaces. Quality craftsmanship, built to last.">
   <meta property="og:title" content="Terra Vista — Custom Pergolas">
-  <meta property="og:description" content="Custom pergolas, patio covers, and outdoor living spaces, built to last.">
+  <meta property="og:description" content="Custom pergolas, patio covers, and shade structures, built to last.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231c261f'/><g stroke='%23c79a6a' stroke-width='7' stroke-linecap='round'><path d='M22 34h56M27 66h46'/><path d='M34 34v34M50 34v34M66 34v34'/></g></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     /* ============================================================
-       EASY EDITS: change colors here, and the words further down.
-       One file, no build step. Images live in /images.
+       Terra Vista — one file, no build step.
+       EDIT: colors here, words further down, images in /images.
+       Committed natural-light look (a brand site, one deliberate world).
        ============================================================ */
     :root {
-      --ink: #22301f;        /* deep green (text) */
-      --paper: #f6f3ec;      /* warm cream (background) */
-      --accent: #9a6a3c;     /* warm wood/terracotta (buttons) */
-      --accent-dark: #7f562f;
-      --muted: #5c6b5a;      /* soft green-grey (subtext) */
-      --line: #e4ded1;
+      --ground: #eceee9;     /* cool light stone (not warm cream) */
+      --panel:  #f6f7f4;     /* slightly lifted surface */
+      --ink:    #1c261f;     /* deep pine (text/headings) */
+      --muted:  #55604f;     /* soft green-grey */
+      --cedar:  #b07d47;     /* warm cedar/oak, the one accent, small doses */
+      --cedar-d:#98693a;
+      --sage:   #7d8f77;
+      --line:   #d8dcd2;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0; background: var(--paper); color: var(--ink);
-      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0; background: var(--ground); color: var(--ink);
+      font: 400 17px/1.65 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
     img { max-width: 100%; display: block; }
-    a { color: var(--accent); }
-    .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-    h2 { font-family: Georgia, serif; font-weight: 600; font-size: clamp(26px, 4.5vw, 36px); margin: 0 0 14px; }
+    a { color: var(--cedar-d); }
+    .wrap { width: 100%; max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+    h1, h2 { font-family: "Fraunces", Georgia, serif; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+    h2 { font-size: clamp(27px, 4.4vw, 38px); margin: 0 0 16px; line-height: 1.1; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: 12px; font-weight: 600; color: var(--sage); }
     .cta {
-      display: inline-block; text-decoration: none; color: #fff; background: var(--accent);
-      padding: 14px 30px; border-radius: 999px; font-weight: 600; font-size: 16px;
+      display: inline-block; text-decoration: none; color: #fff; background: var(--cedar);
+      padding: 14px 30px; border-radius: 8px; font-weight: 600; font-size: 16px; letter-spacing: .01em;
       transition: transform .12s ease, background .12s ease;
     }
-    .cta:hover { transform: translateY(-1px); background: var(--accent-dark); }
+    .cta:hover { transform: translateY(-1px); background: var(--cedar-d); }
+    .cta:focus-visible { outline: 3px solid var(--sage); outline-offset: 2px; }
 
-    /* ---- top bar ---- */
-    header { position: absolute; top: 0; left: 0; right: 0; z-index: 2; }
+    /* ---- top bar (over the hero) ---- */
+    header { position: absolute; inset: 0 0 auto 0; z-index: 2; }
     .bar { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
-    .brand { font-weight: 700; letter-spacing: .03em; font-size: 20px; color: #fff; text-decoration: none; }
-    .nav a { color: #fff; text-decoration: none; margin-left: 22px; font-size: 15px; opacity: .92; }
-    .nav a:hover { opacity: 1; text-decoration: underline; }
+    .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-family: "Fraunces", serif; font-weight: 600; font-size: 22px; letter-spacing: -.01em; }
+    .brand svg { width: 26px; height: 26px; }
+    .nav a { color: #fff; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; opacity: .9; }
+    .nav a:hover { opacity: 1; }
 
     /* ---- hero ---- */
-    .hero {
-      position: relative; min-height: 84vh; display: flex; align-items: center;
-      background: #333 url('images/hero.jpg') center/cover no-repeat;
-      color: #fff;
-    }
-    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,28,18,.55), rgba(20,28,18,.35)); }
-    .hero .wrap { position: relative; z-index: 1; padding-top: 90px; padding-bottom: 60px; }
-    .hero h1 { font-family: Georgia, serif; font-weight: 600; line-height: 1.08; font-size: clamp(38px, 7vw, 62px); margin: 0 0 18px; max-width: 16ch; }
-    .hero p { font-size: clamp(18px, 3vw, 21px); max-width: 40ch; margin: 0 0 30px; opacity: .95; }
+    .hero { position: relative; display: grid; align-items: end; min-height: 82vh; color: #fff;
+      background: #1c261f url('images/hero.jpg') center 40%/cover no-repeat; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,28,22,.5) 0%, rgba(20,28,22,.15) 40%, rgba(20,28,22,.72) 100%); }
+    .hero .wrap { position: relative; z-index: 1; padding-block: 0 56px; }
+    .hero .eyebrow { color: #d7c3a6; }
+    .hero h1 { font-size: clamp(40px, 7.2vw, 66px); line-height: 1.03; margin: 10px 0 18px; max-width: 15ch; }
+    .hero p { font-size: clamp(18px, 2.6vw, 21px); max-width: 42ch; margin: 0 0 28px; color: #eef0ea; }
 
     /* ---- sections ---- */
-    section { padding: 72px 0; }
-    .lead { color: var(--muted); max-width: 60ch; font-size: 18px; }
-    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 34px; }
-    .feature h3 { margin: 0 0 6px; font-size: 18px; }
-    .feature p { margin: 0; color: var(--muted); font-size: 15.5px; }
+    section { padding-block: 80px; }
+    .intro { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
+    .lead { color: var(--muted); font-size: 18.5px; max-width: 60ch; }
+    .points { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+    .points li { padding-left: 34px; position: relative; }
+    .points li::before { content: ""; position: absolute; left: 0; top: 8px; width: 16px; height: 16px; border: 2px solid var(--cedar); border-radius: 4px; }
+    .points strong { display: block; font-size: 17px; }
+    .points span { color: var(--muted); font-size: 15.5px; }
 
-    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
-    .gallery img { border-radius: 12px; aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
+    .work { background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+    .gallery img { border-radius: 10px; aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
 
-    .contact { background: #22301f; color: #f3efe6; text-align: center; }
+    .contact { background: var(--ink); color: #eef0ea; text-align: center; }
     .contact h2 { color: #fff; }
-    .contact p { color: #cfd6c8; max-width: 48ch; margin: 0 auto 28px; }
+    .contact p { color: #c3ccbe; max-width: 46ch; margin: 0 auto 30px; font-size: 18px; }
 
-    footer { padding: 26px 0; color: var(--muted); font-size: 13.5px; border-top: 1px solid var(--line); }
-    .foot-row { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; }
-    .credit { opacity: .8; }
+    footer { padding-block: 26px; font-size: 13.5px; color: var(--muted); }
+    .foot-row { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; align-items: center; }
+    .foot-row .credit { opacity: .75; }
 
-    @media (max-width: 720px) {
+    @media (max-width: 760px) {
       .nav { display: none; }
-      .features, .gallery { grid-template-columns: 1fr; }
-      section { padding: 54px 0; }
+      .intro { grid-template-columns: 1fr; gap: 32px; }
+      .gallery { grid-template-columns: 1fr; }
+      section { padding-block: 56px; }
     }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; transition: none !important; } }
   </style>
 </head>
 <body>
 
   <header>
     <div class="wrap bar">
-      <a class="brand" href="#">Terra&nbsp;Vista</a>
+      <a class="brand" href="#">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="18" fill="none"/><g stroke="#fff" stroke-width="7" stroke-linecap="round"><path d="M22 34h56M27 66h46"/><path d="M34 34v34M50 34v34M66 34v34"/></g></svg>
+        Terra&nbsp;Vista
+      </a>
       <nav class="nav">
         <a href="#work">Our Work</a>
         <a href="#about">About</a>
@@ -96,56 +113,51 @@
     </div>
   </header>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- ============ HERO (edit headline + tagline) ============ -->
   <div class="hero">
     <div class="wrap">
-      <!-- EDIT your headline + tagline here -->
-      <h1>Custom pergolas, built for the way you live outside.</h1>
-      <p>Design and construction of pergolas, patio covers, and outdoor living spaces, crafted to last.</p>
-      <a class="cta" href="#contact">Request a quote</a>
+      <p class="eyebrow">Pergolas &amp; Outdoor Living</p>
+      <h1>Built for the way you live outside.</h1>
+      <p>Terra Vista designs and builds custom pergolas, patio covers, and shade structures, made to fit your yard and last for years.</p>
+      <a class="cta" href="#contact">Request a free quote</a>
     </div>
   </div>
 
-  <!-- ===================== ABOUT ===================== -->
+  <!-- ============ ABOUT ============ -->
   <section id="about">
-    <div class="wrap">
-      <h2>Shade, structure, and a place to gather.</h2>
-      <p class="lead">Terra Vista designs and builds custom pergolas and outdoor structures that turn a backyard into a room you actually use. Every project is built to fit your space, your style, and your budget, with quality materials and honest workmanship.</p>
-      <div class="features">
-        <div class="feature">
-          <h3>Custom design</h3>
-          <p>Sized and styled to your yard, from a simple shade cover to a full outdoor living space.</p>
-        </div>
-        <div class="feature">
-          <h3>Quality materials</h3>
-          <p>Solid, weather-ready construction that holds up season after season.</p>
-        </div>
-        <div class="feature">
-          <h3>Built to last</h3>
-          <p>Careful craftsmanship and a clean finish you will be proud to sit under.</p>
-        </div>
+    <div class="wrap intro">
+      <div>
+        <p class="eyebrow">What we do</p>
+        <h2>Shade, structure, and a place to gather.</h2>
+        <p class="lead">A good pergola turns a plain backyard into a room you actually use. We handle it end to end, from the first sketch to the last bolt, sized and styled to your space, your home, and your budget.</p>
       </div>
+      <ul class="points">
+        <li><strong>Custom design</strong><span>From a simple shade cover to a full outdoor living space.</span></li>
+        <li><strong>Quality materials</strong><span>Solid, weather-ready builds that hold up season after season.</span></li>
+        <li><strong>Clean craftsmanship</strong><span>Careful work and a finish you will be proud to sit under.</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- ===================== GALLERY ===================== -->
-  <section id="work" style="padding-top:0;">
+  <!-- ============ GALLERY ============ -->
+  <section id="work" class="work">
     <div class="wrap">
-      <h2>Our work</h2>
+      <p class="eyebrow">Our work</p>
+      <h2>Recent builds.</h2>
       <div class="gallery">
-        <img src="images/pergola-1.jpg" alt="Wooden pergola over a patio" loading="lazy">
-        <img src="images/pergola-2.jpg" alt="Modern pergola with seating" loading="lazy">
-        <img src="images/pergola-3.jpg" alt="Pergola with climbing greenery" loading="lazy">
+        <img src="images/pergola-1.jpg" alt="Wooden pergola over a paved patio" loading="lazy" width="900" height="600">
+        <img src="images/pergola-2.jpg" alt="Modern pergola with outdoor seating" loading="lazy" width="900" height="600">
+        <img src="images/pergola-3.jpg" alt="Pergola with climbing greenery" loading="lazy" width="900" height="600">
       </div>
     </div>
   </section>
 
-  <!-- ===================== CONTACT ===================== -->
+  <!-- ============ CONTACT (edit the email) ============ -->
   <section id="contact" class="contact">
     <div class="wrap">
+      <p class="eyebrow" style="color:#c79a6a">Get in touch</p>
       <h2>Let's build your space.</h2>
-      <p>Tell us about your project and we will get back to you with a free quote.</p>
-      <!-- EDIT the email below (and set it up in Hostinger) -->
+      <p>Tell us about your project and we'll get back to you with a free, no-pressure quote.</p>
       <a class="cta" href="mailto:hello@terravista.living">Email us</a>
     </div>
   </section>
@@ -153,7 +165,7 @@
   <footer>
     <div class="wrap foot-row">
       <span>&copy; <span id="y"></span> Terra Vista &middot; terravista.living</span>
-      <span class="credit">Photos via Pexels: Max Vakhtbovych, Matheus Bertelli, Natalia Chiciuc, Maria Orlova.</span>
+      <span class="credit">Photos: Pexels — Max Vakhtbovych, Matheus Bertelli, Natalia Chiciuc, Maria Orlova.</span>
     </div>
   </footer>
 
